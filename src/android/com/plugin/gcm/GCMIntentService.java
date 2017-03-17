@@ -19,6 +19,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     public static final int NOTIFICATION_ID = 237;
 
+    public static final String LOG_TAG = "PushPlugin";
+
     private static String TAG = "PushPlugin-GCMIntentService";
 
     public static final String MESSAGE = "message";
