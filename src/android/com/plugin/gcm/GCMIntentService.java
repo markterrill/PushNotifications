@@ -93,11 +93,12 @@ public class GCMIntentService extends GCMBaseIntentService {
                         .setAutoCancel(true);
 
 
+        String soundname = null;
         if (extras.getString("gcm.notification.sound") != null){
-            String soundname = extras.getString("gcm.notification.sound");
+            soundname = extras.getString("gcm.notification.sound");
             Log.d(TAG, "sound (via gcm): " + soundname);
         } else {
-            String soundname = extras.getString("sound");
+            soundname = extras.getString("sound");
             Log.d(TAG, "sound: " + soundname);
         }
 
