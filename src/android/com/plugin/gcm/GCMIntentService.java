@@ -89,11 +89,14 @@ public class GCMIntentService extends GCMBaseIntentService {
                         .setContentIntent(contentIntent)
                         .setAutoCancel(true);
 
+
+
         String soundname = extras.getString("soundname");
+        Log.d(LOG, "soundname: " + soundname);
         if (soundname != null) {
             Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
                         + "://" + context.getPackageName() + "/raw/" + soundname);
-            Log.d(LOG_TAG, sound.toString());
+            Log.d(LOG, "Parsed sound is: " + sound.toString());
             mBuilder.setSound(sound);
         }
 
