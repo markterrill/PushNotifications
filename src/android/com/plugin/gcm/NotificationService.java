@@ -232,7 +232,7 @@ public class NotificationService {
             while (it.hasNext()) {
                 String key = it.next();
 
-                Log.e(TAG, "createNotificationJSON: " + key);
+                //Log.e(TAG, "createNotificationJSON: " + key);
 
                 if (parseSystemData(key, notification, extras)) {
                     continue;
