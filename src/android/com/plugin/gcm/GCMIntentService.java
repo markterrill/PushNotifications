@@ -92,11 +92,11 @@ public class GCMIntentService extends GCMBaseIntentService {
 
 
         String soundname = extras.getString("soundname");
-        Log.d(LOG, "soundname: " + soundname);
+        Log.d(TAG, "soundname: " + soundname);
         if (soundname != null) {
             Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
                         + "://" + context.getPackageName() + "/raw/" + soundname);
-            Log.d(LOG, "Parsed sound is: " + sound.toString());
+            Log.d(TAG, "Parsed sound is: " + sound.toString());
             mBuilder.setSound(sound);
         }
 
