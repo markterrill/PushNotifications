@@ -60,7 +60,8 @@
 		<source-file src="src/android/com/plugin/gcm/GCMIntentService.java" target-dir="src/com/plugin/gcm/" />
 		<source-file src="src/android/com/plugin/gcm/PushHandlerActivity.java" target-dir="src/com/plugin/gcm/" />
 		<source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/" />
-    <source-file src="src/android/com/plugin/gcm/NotificationService.java" target-dir="src/com/plugin/gcm/" />
+        <source-file src="src/android/com/plugin/gcm/NotificationService.java" target-dir="src/com/plugin/gcm/" />
+        <source-file src="src/android/mp3/sonar2.mp3" target-dir="res/raw/" />
 
 	</platform>
 
