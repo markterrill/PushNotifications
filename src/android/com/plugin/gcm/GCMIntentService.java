@@ -79,16 +79,18 @@ public class GCMIntentService extends GCMBaseIntentService {
             }
         }
 
+
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        .setDefaults(defaults)
+                        //.setDefaults(defaults)
+                        .setDefaults(~Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
+                        .setLights(0xFFFF0000,100,3000)  //ignore FF at the start
                         .setSmallIcon(context.getApplicationInfo().icon)
                         .setWhen(System.currentTimeMillis())
                         .setContentTitle(extras.getString("title"))
                         .setTicker(extras.getString("title"))
                         .setContentIntent(contentIntent)
                         .setAutoCancel(true);
-
 
 
         String soundname = extras.getString("soundname");
@@ -99,6 +101,10 @@ public class GCMIntentService extends GCMBaseIntentService {
             Log.d(TAG, "Parsed sound is: " + sound.toString());
             mBuilder.setSound(sound);
         }
+        /*
+        Uri sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.notifysnd);
+        mBuilder.setSound(sound);
+        */
 
 
         String message = extras.getString("message");
