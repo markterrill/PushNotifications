@@ -2,6 +2,8 @@ package com.plugin.gcm;
 
 import com.google.android.gcm.GCMBaseIntentService;
 
+import android.content.ContentResolver;
+import android.net.Uri;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
