@@ -53,6 +53,9 @@ public class NotificationService {
 
     public static final String SOUNDNAMEALT = "sound";
 
+    public static final String SOUNDNAMEGCM = "gcm.notification.sound";
+
+
     public static final String JSON_START_PREFIX = "{";
 
     public static final String JSON_ARRAY_START_PREFIX = "[";
@@ -307,8 +310,12 @@ public class NotificationService {
     // Maintain backwards compatibility
     private void parseLegacyProperty(String key, JSONObject json, Bundle extras)
             throws JSONException {
-        if (key.equals(MESSAGE) || key.equals(MSGCNT) || key.equals(SOUNDNAME) || key.equals(SOUNDNAMEALT)) {
+        if (key.equals(MESSAGE) || key.equals(MSGCNT)) {
             json.put(key, extras.get(key));
+        }
+        else if (key.equals(SOUNDNAMEGCM) || key.equals(SOUNDNAMEALT) || key.equals(SOUNDNAME)){
+            // the key name would be like 'gcm.notification.soundname'
+            json.put("sound", extras.get(key)); // change the name to something more useful
         }
     }
 

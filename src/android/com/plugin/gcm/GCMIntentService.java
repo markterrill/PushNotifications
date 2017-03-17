@@ -93,6 +93,7 @@ public class GCMIntentService extends GCMBaseIntentService {
                         .setAutoCancel(true);
 
 
+        // This soundname retrieval depends on notificationservice picking it up and placing it in extras
         String soundname = extras.getString("sound");
         Log.d(TAG, "sound: " + soundname);
         if (soundname != null) {
@@ -105,7 +106,6 @@ public class GCMIntentService extends GCMBaseIntentService {
         Uri sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.notifysnd);
         mBuilder.setSound(sound);
         */
-
 
         String message = extras.getString("message");
         if (message != null) {
