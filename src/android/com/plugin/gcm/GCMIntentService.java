@@ -106,7 +106,7 @@ public class GCMIntentService extends GCMBaseIntentService {
                 // ok, we need to pull out the name of the file without suffix for Android
                 String[] wordSplit = soundname.split("/"); // its regex so escape the dot
 
-                String[] fileSplit = wordSplit[2].split("\."); // its regex so escape the dot, this will leave 'woopwoop.caf' as the second element
+                String[] fileSplit = wordSplit[2].split("\\."); // its regex so escape the dot, this will leave 'woopwoop.caf' as the second element
 
                 soundname = fileSplit[0]; // it'll be the first element before the dot
 
