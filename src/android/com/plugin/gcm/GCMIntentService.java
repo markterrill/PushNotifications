@@ -97,6 +97,22 @@ public class GCMIntentService extends GCMBaseIntentService {
         if (extras.getString("gcm.notification.sound") != null){
             soundname = extras.getString("gcm.notification.sound");
             Log.d(TAG, "sound (via gcm): " + soundname);
+
+            // see if we've supplied an iOS style path like "www/sounds/woopwoop.caf"
+            if (soundname.startsWith("www/sounds")){
+
+                Log.d(TAG, "sound has www/sounds in it");
+
+                // ok, we need to pull out the name of the file without suffix for Android
+                String[] wordSplit = soundname.split("/"); // its regex so escape the dot
+
+                String[] fileSplit = wordSplit[2].split("\."); // its regex so escape the dot, this will leave 'woopwoop.caf' as the second element
+
+                soundname = fileSplit[0]; // it'll be the first element before the dot
+
+                Log.d(TAG, "soundname after splits: " + soundname);
+            }
+
         } else {
             soundname = extras.getString("sound");
             Log.d(TAG, "sound: " + soundname);
