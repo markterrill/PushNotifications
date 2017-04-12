@@ -194,7 +194,7 @@ public class NotificationService {
     public void onMessage(Bundle extras) {
         JSONObject notification = createNotificationJSON(extras);
 
-        Log.v(TAG, "onMessage() -> isForeground: " + isForeground() + " isApplicationRunning "
+        Log.v(TAG, "onMessage() markv -> isForeground: " + isForeground() + " isApplicationRunning "
                 + isApplicationRunning() + " notification: "
                 + notification);
 
