@@ -62,7 +62,7 @@
 		<source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/com/plugin/gcm/NotificationService.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/mp3/sonar.mp3" target-dir="res/raw/" />
-		<source-file src="src/android/mp3/clock.wav" target-dir="res/raw/" />
+		<source-file src="src/android/mp3/clock.mp3" target-dir="res/raw/" />
 		<source-file src="src/android/mp3/woopwoop.mp3" target-dir="res/raw/" />
 		<source-file src="src/android/mp3/radar.mp3" target-dir="res/raw/" />
 		<source-file src="src/android/mp3/trainwhistle.mp3" target-dir="res/raw/" />
